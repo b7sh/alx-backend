@@ -1,4 +1,4 @@
-#!/usr/bin/env pyython3
+#!/usr/bin/env python3
 '''
 a class BasicCache that inherits from
 BaseCaching and is a caching system
@@ -18,7 +18,7 @@ class BasicCache(BaseCaching):
             If key or item is None,
             this method should not do anything.
         '''
-        if key is not None or item is not None:
+        if key is not None and item is not None:
             self.cache_data[key] = item
 
     def get(self, key):
@@ -28,6 +28,6 @@ class BasicCache(BaseCaching):
             If key is None or if the key
             doesn’t exist in self.cache_data, return None.
         '''
-        if key is not None and key in self.cache_data.keys():
+        if key is not None and key in self.cache_data:
             return self.cache_data[key]
         return None
