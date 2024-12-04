@@ -12,8 +12,8 @@ async function setNewSchool(schoolName, value) {
   await client.set(schoolName, value, redis.print);
 }
 
-function displaySchoolValue(schoolName) {
-  client.get(schoolName, (err, res) => console.log(res));
+async function displaySchoolValue(schoolName) {
+  await client.get(schoolName, (err, res) => console.log(res));
 }
 
 displaySchoolValue('Holberton');
